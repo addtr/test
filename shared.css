@@ -324,17 +324,23 @@ section { padding: 80px 0; }
 .about-img-accent { position: absolute; bottom: -16px; right: -16px; width: 100px; height: 100px; background: var(--green); z-index: -1; }
 
 /* PORTALS */
-.portals { background: var(--bg-dark); padding: 0; }
-.portals-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.portals { background: var(--bg-dark); padding: 60px 0; border-top: 1px solid var(--border); }
+.portals-heading { text-align: center; margin-bottom: 2.5rem; }
+.portals-heading h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); font-weight: 600; }
+.portals-heading p { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem; }
+.portals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 820px; margin: 0 auto; padding: 0 2rem; }
 .portal-btn {
-  display: block; padding: 2rem; text-align: center;
-  font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  padding: 2.5rem 2rem; text-align: center;
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
   font-weight: 700; text-decoration: none; color: white;
-  background: var(--green); transition: background var(--transition);
-  border: none; border-right: 1px solid rgba(255,255,255,0.1);
+  background: var(--bg-card); border: 2px solid var(--green);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
 }
-.portal-btn:last-child { border-right: none; }
-.portal-btn:hover { background: var(--green-hover); }
+.portal-btn:hover { background: var(--green); border-color: var(--green-hover); transform: translateY(-3px); }
+.portal-btn .portal-icon { font-size: 2rem; line-height: 1; }
+.portal-btn .portal-title { font-size: 1rem; font-family: 'Playfair Display', serif; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--white); }
+.portal-btn .portal-desc { font-size: 0.78rem; color: var(--text-muted); font-weight: 400; letter-spacing: 0.04em; text-transform: none; line-height: 1.5; margin-top: 0.1rem; }
 
 /* BROKER SIGNUP */
 .broker-signup { background: var(--bg); padding: 80px 0; }
@@ -469,5 +475,5 @@ footer { background: var(--bg-dark); color: var(--text-muted); padding: 56px 0 0
   .form-row { grid-template-columns: 1fr; }
   .testi-card { padding: 1.8rem; }
   .portals-grid { grid-template-columns: 1fr; }
-  .portal-btn { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .portal-btn { border-bottom: 2px solid var(--green); }
 }
