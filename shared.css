@@ -342,6 +342,7 @@ section { padding: 80px 0; }
 .broker-inner .section-intro { margin-bottom: 2rem; }
 .signup-form { display: flex; flex-direction: column; gap: 1rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.signup-form select { appearance: none; -webkit-appearance: none; cursor: pointer; }
 .signup-form input, .signup-form textarea, .signup-form select {
   padding: 0.75rem 1rem; border: 1px solid var(--border);
   background: var(--bg-input); font-family: 'Inter', sans-serif;
@@ -351,7 +352,7 @@ section { padding: 80px 0; }
 }
 .signup-form textarea { resize: vertical; min-height: 120px; }
 .signup-form input::placeholder, .signup-form textarea::placeholder { color: var(--text-muted); }
-.signup-form input:focus, .signup-form textarea:focus, .signup-form select:focus { border-color: var(--green); }
+.signup-form input:focus, .signup-form textarea:focus, .signup-form select:focus { border-color: var(--green); outline: none; }
 .signup-form button {
   background: none; color: var(--white); border: 1px solid var(--white);
   padding: 0.78rem 2rem; font-family: 'Inter', sans-serif;
