@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7300 Pearl St, Bethesda MD | Jackson Prentice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .listing-hero { background: var(--bg-dark); padding: 0; position: relative; }
+  .listing-hero img { width: 100%; height: 420px; object-fit: cover; display: block; opacity: 0.75; }
+  .listing-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(17,17,17,0.92) 30%, rgba(17,17,17,0.3) 100%); display: flex; align-items: flex-end; }
+  .listing-hero-text { padding: 2.5rem; max-width: 1200px; width: 100%; margin: 0 auto; }
+  .listing-hero-text h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem,4vw,2.4rem); color: white; font-weight: 700; }
+  .listing-hero-text .listing-address { font-size: 0.9rem; color: rgba(255,255,255,0.65); margin-top: 0.4rem; }
+  .listing-body { padding: 60px 0; background: var(--bg); }
+  .listing-grid { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: start; }
+  .listing-body p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+  .listing-sidebar { background: var(--bg-card); border: 1px solid var(--border); border-top: 3px solid #1a4d8a; padding: 2rem; }
+  .listing-sidebar h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); margin-bottom: 1.2rem; }
+  .listing-detail-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.84rem; }
+  .listing-detail-row .label { color: var(--text-muted); }
+  .listing-detail-row .val { color: var(--white); font-weight: 500; text-align: right; }
+  @media(max-width:900px){ .listing-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <span>Commercial Real Estate · DC Metro Area</span>
+    <a href="mailto:info@jacksonprentice.com">info@jacksonprentice.com</a>
+    <a href="tel:2028418700"><strong>202.841.8700</strong></a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">JP</div>
+      <div class="logo-text">
+        <span class="logo-title">Jackson Prentice</span>
+        <span class="logo-sub">Real Estate Services, LLC</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="services.html">Services</a>
+        <ul class="dropdown">
+          <li><a href="services.html#land-assemblage">Land Assemblage</a></li>
+          <li><a href="services.html#investment-sales">Investment Sales</a></li>
+          <li><a href="services.html#leasing">Leasing</a></li>
+          <li><a href="property-management.html">Property Management</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="listings.html" class="active">Properties</a>
+        <ul class="dropdown">
+          <li><a href="listings.html#for-lease">For Lease</a></li>
+          <li><a href="listings.html#for-sale">For Sale</a></li>
+          <li><a href="listings.html#leased">Properties Leased</a></li>
+          <li><a href="listings.html#sold">Properties Sold</a></li>
+        </ul>
+      </li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="listings.html">Properties</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a>
+  <a href="tel:2028418700" style="margin-top:1.5rem;color:var(--green-hover);">202.841.8700</a>
+</div>
+
+<div class="listing-hero">
+  <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/08/1442851601-300x216.jpg" alt="7300 Pearl St Bethesda">
+  <div class="listing-hero-overlay">
+    <div class="listing-hero-text">
+      <div class="breadcrumb" style="margin-bottom:0.75rem;">
+        <a href="index.html">Home</a><span>/</span><a href="listings.html">Properties</a><span>/</span><span>7300 Pearl St</span>
+      </div>
+      <span class="prop-badge sale" style="position:static;display:inline-block;margin-bottom:0.75rem;">For Sale</span>
+      <h1>7300 Pearl Street</h1>
+      <p class="listing-address">Bethesda, MD 20814</p>
+    </div>
+  </div>
+</div>
+
+<div class="listing-body">
+  <div class="container">
+    <div class="listing-grid">
+      <div>
+        <span class="section-label">Property Details</span>
+        <h2 class="section-title" style="font-size:1.4rem;">7300 Pearl St — Bethesda, MD</h2>
+        <div class="section-divider"></div>
+        <p>This investment or owner-user property is located in Bethesda, Maryland — one of the DC Metro's most sought-after commercial markets. Bethesda features a dense, affluent daytime and residential population, proximity to the NIH campus, and strong retail and office demand driven by major employers in the healthcare, legal, and government contracting sectors.</p>
+        <p>Pearl Street runs through Bethesda's established commercial core, offering excellent connectivity to Wisconsin Avenue, Old Georgetown Road, and the Bethesda Metro station on the Red Line. Properties in this location benefit from high foot traffic and the area's continued commercial investment.</p>
+        <p>This is an exceptional opportunity for an investor or owner-user seeking a presence in one of suburban Maryland's premier commercial districts. Contact JPRES for pricing, square footage, and additional details.</p>
+        <a href="contact.html" class="btn-green" style="margin-top:1rem;display:inline-block;">Inquire About This Property</a>
+      </div>
+      <div class="listing-sidebar">
+        <h3>Listing Summary</h3>
+        <div class="listing-detail-row"><span class="label">Status</span><span class="val" style="color:#6b9ed2;">For Sale</span></div>
+        <div class="listing-detail-row"><span class="label">Address</span><span class="val">7300 Pearl St</span></div>
+        <div class="listing-detail-row"><span class="label">City</span><span class="val">Bethesda, MD 20814</span></div>
+        <div class="listing-detail-row"><span class="label">Type</span><span class="val">Commercial / Investment</span></div>
+        <div class="listing-detail-row"><span class="label">Market</span><span class="val">Montgomery County, MD</span></div>
+        <div style="margin-top:1.5rem;">
+          <a href="contact.html" class="btn-green" style="display:block;text-align:center;margin-bottom:0.75rem;">Request Info</a>
+          <a href="listings.html#for-sale" class="btn-dark" style="display:block;text-align:center;margin-bottom:0.75rem;">View All For Sale</a>
+          <a href="listings.html" class="btn-dark" style="display:block;text-align:center;">← All Listings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row"><div class="footer-logo-icon">JP</div><div><div class="footer-logo-title">Jackson Prentice</div><span class="footer-logo-sub">Real Estate Services, LLC</span></div></div>
+        <p>PO BOX 40058, Washington DC, 20016</p>
+        <p style="margin-top:0.5rem;"><a href="tel:2028418700">202.841.8700</a></p>
+        <p style="margin-top:0.5rem;"><a href="mailto:info@jacksonprentice.com" style="color:var(--green-hover);">info@jacksonprentice.com</a></p>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#land-assemblage">Land Assemblage</a></li><li><a href="services.html#investment-sales">Investment Sales</a></li><li><a href="services.html#leasing">Leasing</a></li><li><a href="property-management.html">Property Management</a></li></ul></div>
+      <div class="footer-col"><h4>Properties</h4><ul><li><a href="listings.html#for-lease">For Lease</a></li><li><a href="listings.html#for-sale">For Sale</a></li><li><a href="listings.html#leased">Properties Leased</a></li><li><a href="listings.html#sold">Properties Sold</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Jackson Prentice Real Estate Services, LLC. All rights reserved.</span><span>Licensed in DC · Maryland · Virginia</span></div>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>
