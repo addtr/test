@@ -264,6 +264,7 @@ section { padding: 80px 0; }
 }
 .prop-badge.leased { background: #555; }
 .prop-badge.sale { background: #1a4d8a; }
+.prop-badge.sold { background: #6b4a1a; }
 .prop-info { padding: 1.1rem 1.3rem; }
 .prop-info h4 {
   font-family: 'Playfair Display', serif; font-size: 0.9rem;
