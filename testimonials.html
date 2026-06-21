@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials | Jackson Prentice Real Estate Services</title>
+<meta name="description" content="Read what clients say about working with Jackson Prentice Real Estate Services — developers, property owners, and business tenants across Washington DC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+  .testi-full-card {
+    background: var(--bg-dark); border: 1px solid var(--border);
+    border-left: 3px solid var(--green); padding: 2.2rem 2.4rem;
+  }
+  .testi-full-card .testi-quote {
+    font-family: 'Playfair Display', serif; font-size: 0.97rem;
+    color: var(--text); line-height: 1.8; font-style: italic; margin-bottom: 1.4rem;
+  }
+  .testi-full-card .testi-quote::before {
+    content: '\201C'; color: var(--green); font-size: 2rem;
+    line-height: 0; vertical-align: -0.5rem; margin-right: 4px;
+  }
+  .testi-full-card .testi-author { font-size: 0.85rem; font-weight: 600; color: var(--white); }
+  .testi-full-card .testi-role { font-size: 0.76rem; color: var(--text-muted); margin-top: 2px; }
+  @media(max-width:700px){ .testi-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <span>Commercial Real Estate · DC Metro Area</span>
+    <a href="mailto:info@jacksonprentice.com">info@jacksonprentice.com</a>
+    <a href="tel:2028418700"><strong>202.841.8700</strong></a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">JP</div>
+      <div class="logo-text">
+        <span class="logo-title">Jackson Prentice</span>
+        <span class="logo-sub">Real Estate Services, LLC</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="services.html">Services</a>
+        <ul class="dropdown">
+          <li><a href="services.html#land-assemblage">Land Assemblage</a></li>
+          <li><a href="services.html#investment-sales">Investment Sales</a></li>
+          <li><a href="services.html#leasing">Leasing</a></li>
+          <li><a href="property-management.html">Property Management</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="listings.html">Properties</a>
+        <ul class="dropdown">
+          <li><a href="listings.html#for-lease">For Lease</a></li>
+          <li><a href="listings.html#for-sale">For Sale</a></li>
+          <li><a href="listings.html#leased">Properties Leased</a></li>
+          <li><a href="listings.html#sold">Properties Sold</a></li>
+        </ul>
+      </li>
+      <li><a href="testimonials.html" class="active">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="services.html#land-assemblage" class="sub">Land Assemblage</a>
+  <a href="services.html#investment-sales" class="sub">Investment Sales</a>
+  <a href="services.html#leasing" class="sub">Leasing</a>
+  <a href="property-management.html" class="sub">Property Management</a>
+  <a href="listings.html">Properties</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="contact.html">Contact</a>
+  <a href="tel:2028418700" style="margin-top:1.5rem;color:var(--green-hover);">202.841.8700</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span>Testimonials</span>
+    </div>
+    <span class="page-hero-eyebrow">Client Voices</span>
+    <div class="page-hero-line"></div>
+    <h1>What Our Clients Say</h1>
+    <p>JPRES has earned the trust of developers, property owners, and business tenants across the DC Metro area over more than four decades.</p>
+  </div>
+</div>
+
+<!-- TESTIMONIALS GRID -->
+<section style="background:var(--bg);padding:80px 0;">
+  <div class="container">
+    <div class="testi-grid">
+
+      <div class="testi-full-card">
+        <p class="testi-quote">Great fiduciaries, great market knowledge — they know how to line a good deal up and get it closed.</p>
+        <div class="testi-author">Bob Murphy</div>
+        <div class="testi-role">Managing Principal, MRP Realty</div>
+      </div>
+
+      <div class="testi-full-card">
+        <p class="testi-quote">When I was looking for a management company, the name Jackson Prentice Real Estate Services came up over and over again. They have exceeded my expectations.</p>
+        <div class="testi-author">Peggy Banks</div>
+        <div class="testi-role">Property Owner</div>
+      </div>
+
+      <div class="testi-full-card">
+        <p class="testi-quote">I have known Jackson my entire career. He was one of the earliest real estate professionals I worked with — his integrity is unmatched.</p>
+        <div class="testi-author">Douglas Jemal</div>
+        <div class="testi-role">Founder &amp; President, Douglas Development Corporation</div>
+      </div>
+
+      <div class="testi-full-card">
+        <p class="testi-quote">Jackson Prentice has been our go-to firm for all our real estate needs over the last five years. Our requests have been challenging, but they have consistently delivered.</p>
+        <div class="testi-author">Eric Gilliland</div>
+        <div class="testi-role">General Manager, Capital Bikeshare</div>
+      </div>
+
+      <div class="testi-full-card">
+        <p class="testi-quote">I have worked with Jackson and Hannah for nearly 20 years. They have represented Rock Creek on both leasing and sale assignments in a variety of locations throughout the metro area.</p>
+        <div class="testi-author">Gary Schlager</div>
+        <div class="testi-role">Principal, Rock Creek Property Group</div>
+      </div>
+
+      <div class="testi-full-card">
+        <p class="testi-quote">Negotiations were challenging, but Jackson Prentice negotiated a lease that was both fair and favorable. I found them to be responsive, knowledgeable, and professional throughout the entire process.</p>
+        <div class="testi-author">Dr. Joanne Simpson</div>
+        <div class="testi-role">Alexandria Associates in Dermatology</div>
+      </div>
+
+      <div class="testi-full-card">
+        <p class="testi-quote">JPRES brought us a deal we never would have found on our own. Their off-market relationships in DC are unparalleled. We closed in less than 90 days.</p>
+        <div class="testi-author">A. Michael Grant</div>
+        <div class="testi-role">Real Estate Investor, Washington DC</div>
+      </div>
+
+      <div class="testi-full-card">
+        <p class="testi-quote">Hannah and Jackson are the rare combination of sophisticated market analysts and old-school relationship brokers. That blend is what closed our deal.</p>
+        <div class="testi-author">Theresa Whitmore</div>
+        <div class="testi-role">Chief Operating Officer, Whitmore Capital Group</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="stats-band">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);color:white;font-weight:600;margin-bottom:1rem;">Ready to Work With JPRES?</h2>
+    <p style="color:rgba(255,255,255,0.75);font-size:0.92rem;max-width:480px;margin:0 auto 1.8rem;line-height:1.7;">Join dozens of owners, developers, and businesses who have trusted us with their most important real estate decisions.</p>
+    <a href="contact.html" class="btn-outline" style="border-color:rgba(255,255,255,0.5);color:white;">Get in Touch</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">JP</div>
+          <div>
+            <div class="footer-logo-title">Jackson Prentice</div>
+            <span class="footer-logo-sub">Real Estate Services, LLC</span>
+          </div>
+        </div>
+        <p>Jackson Prentice Real Estate Services, LLC<br>PO BOX 40058<br>Washington DC, 20016</p>
+        <p style="margin-top:0.75rem;"><a href="tel:2028418700">202.841.8700</a><br><a href="tel:2026007617">202.600.7617</a></p>
+        <p style="margin-top:0.5rem;"><a href="mailto:info@jacksonprentice.com" style="color:var(--green-hover);">info@jacksonprentice.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#land-assemblage">Land Assemblage</a></li>
+          <li><a href="services.html#investment-sales">Investment Sales</a></li>
+          <li><a href="services.html#leasing">Leasing</a></li>
+          <li><a href="property-management.html">Property Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Properties</h4>
+        <ul>
+          <li><a href="listings.html#for-lease">For Lease</a></li>
+          <li><a href="listings.html#for-sale">For Sale</a></li>
+          <li><a href="listings.html#leased">Properties Leased</a></li>
+          <li><a href="listings.html#sold">Properties Sold</a></li>
+          <li><a href="http://jpres.twa.rentmanager.com/" target="_blank">Tenant Portal</a></li>
+          <li><a href="http://jpres.owa.rentmanager.com/" target="_blank">Owner Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jackson Prentice Real Estate Services, LLC. All rights reserved.</span>
+      <span><a href="#">Real Estate Agent Login</a> &nbsp;|&nbsp; Licensed in DC · Maryland · Virginia</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

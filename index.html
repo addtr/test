@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jackson Prentice Real Estate Services | Washington DC Commercial Real Estate</title>
+<meta name="description" content="Jackson Prentice Real Estate Services specializes in buying and selling commercial and investment real estate in Washington DC, Northern Virginia, and the DC Metropolitan Area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="inner">
+    <span>Commercial Real Estate · DC Metro Area</span>
+    <a href="mailto:info@jacksonprentice.com">info@jacksonprentice.com</a>
+    <a href="tel:2028418700"><strong>202.841.8700</strong></a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">JP</div>
+      <div class="logo-text">
+        <span class="logo-title">Jackson Prentice</span>
+        <span class="logo-sub">Real Estate Services, LLC</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="services.html">Services</a>
+        <ul class="dropdown">
+          <li><a href="services.html#land-assemblage">Land Assemblage</a></li>
+          <li><a href="services.html#investment-sales">Investment Sales</a></li>
+          <li><a href="services.html#leasing">Leasing</a></li>
+          <li><a href="property-management.html">Property Management</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="listings.html">Properties</a>
+        <ul class="dropdown">
+          <li><a href="listings.html#for-lease">For Lease</a></li>
+          <li><a href="listings.html#for-sale">For Sale</a></li>
+          <li><a href="listings.html#leased">Properties Leased</a></li>
+          <li><a href="listings.html#sold">Properties Sold</a></li>
+        </ul>
+      </li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="services.html#land-assemblage" class="sub">Land Assemblage</a>
+  <a href="services.html#investment-sales" class="sub">Investment Sales</a>
+  <a href="services.html#leasing" class="sub">Leasing</a>
+  <a href="property-management.html" class="sub">Property Management</a>
+  <a href="listings.html">Properties</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="contact.html">Contact</a>
+  <a href="tel:2028418700" style="margin-top:1.5rem;color:var(--green-hover);">202.841.8700</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="slide active" style="background-image:url('https://www.jacksonprentice.com/wp-content/uploads/2016/03/img3-1600x625.jpg')"></div>
+  <div class="slide" style="background-image:url('https://www.jacksonprentice.com/wp-content/uploads/2016/03/slide2-1600x625.jpg')"></div>
+  <div class="slide" style="background-image:url('https://www.jacksonprentice.com/wp-content/uploads/2016/03/slide3-1600x625.jpg')"></div>
+  <div class="slide" style="background-image:url('https://www.jacksonprentice.com/wp-content/uploads/2016/03/slide4-1600x625.jpg')"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Washington DC · Maryland · Northern Virginia</span>
+    <h1>Commercial &amp; Investment Real Estate</h1>
+    <div class="hero-line"></div>
+    <p>A boutique, family-owned firm with over four decades of expertise in the DC Metro commercial market.</p>
+    <div class="hero-btns">
+      <a href="listings.html" class="btn-green">View Properties</a>
+      <a href="contact.html" class="btn-outline">Contact Us</a>
+    </div>
+  </div>
+  <div class="slide-dots">
+    <button class="dot active" onclick="goToSlide(0)"></button>
+    <button class="dot" onclick="goToSlide(1)"></button>
+    <button class="dot" onclick="goToSlide(2)"></button>
+    <button class="dot" onclick="goToSlide(3)"></button>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Full-Service Commercial Real Estate</h2>
+        <div class="section-divider"></div>
+      </div>
+      <p class="section-intro">JPRES offers a comprehensive range of services across the DC Metro area, backed by decades of relationships and market expertise.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🏗</span>
+        <h3>Land Assemblage</h3>
+        <p>JPRES has participated in countless hard-to-acquire land purchases for strategic assemblages of development deals over the past several decades.</p>
+        <a href="services.html#land-assemblage" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📈</span>
+        <h3>Investment Sales</h3>
+        <p>We assist a wide variety of owners and buyers in investment transactions, helping determine the highest and best use of a property.</p>
+        <a href="services.html#investment-sales" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔑</span>
+        <h3>Leasing</h3>
+        <p>JPRES proactively represents landlord and tenant clients in their leasing needs, from establishing market rates to securing quality tenants.</p>
+        <a href="services.html#leasing" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏢</span>
+        <h3>Property Management</h3>
+        <p>We currently manage several office and mixed-use properties in Washington, DC and Virginia totaling over 150,000 square feet.</p>
+        <a href="property-management.html" class="service-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-grid">
+      <div><div class="stat-num">45+</div><div class="stat-label">Years in Business</div></div>
+      <div><div class="stat-num">150K</div><div class="stat-label">Sq Ft Under Management</div></div>
+      <div><div class="stat-num">3</div><div class="stat-label">Metro Jurisdictions</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Occupancy Maintained</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROPERTIES -->
+<section class="properties" id="properties">
+  <div class="container">
+    <span class="section-label">Listings</span>
+    <h2 class="section-title">Featured Properties</h2>
+    <div class="section-divider"></div>
+    <div class="prop-tabs">
+      <button class="prop-tab active" onclick="switchTab(this,'for-lease')">For Lease</button>
+      <button class="prop-tab" onclick="switchTab(this,'for-sale')">For Sale</button>
+    </div>
+    <div class="prop-panel active" id="for-lease">
+      <div class="prop-grid">
+        <a href="listings.html#p-300-n-washington" class="prop-card">
+          <div class="prop-img">
+            <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/08/IMG_3633-300x225.jpg" alt="300 N Washington St" loading="lazy">
+            <span class="prop-badge">For Lease</span>
+          </div>
+          <div class="prop-info"><h4>300 N Washington St<br>Falls Church, VA 22046</h4></div>
+        </a>
+        <a href="listings.html#p-5735-telegraph" class="prop-card">
+          <div class="prop-img">
+            <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/08/Main-photo-300x198.jpg" alt="5735-A Telegraph Rd" loading="lazy">
+            <span class="prop-badge leased">Leased</span>
+          </div>
+          <div class="prop-info"><h4>5735-A Telegraph Rd<br>Alexandria, VA 22303</h4></div>
+        </a>
+        <a href="listings.html#p-3837-pennsylvania" class="prop-card">
+          <div class="prop-img">
+            <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/08/3837-Pennsylvania-Avenue-300x225.jpg" alt="3837 Pennsylvania Ave SE" loading="lazy">
+            <span class="prop-badge">For Lease</span>
+          </div>
+          <div class="prop-info"><h4>3837 Pennsylvania Ave SE<br>Washington, DC 20020</h4></div>
+        </a>
+      </div>
+      <div class="prop-cta"><a href="listings.html" class="btn-dark">View All Properties</a></div>
+    </div>
+    <div class="prop-panel" id="for-sale">
+      <div class="prop-grid">
+        <a href="listings.html#p-7300-pearl" class="prop-card">
+          <div class="prop-img">
+            <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/08/1442851601-300x216.jpg" alt="7300 Pearl St Bethesda" loading="lazy">
+            <span class="prop-badge sale">For Sale</span>
+          </div>
+          <div class="prop-info"><h4>7300 Pearl St<br>Bethesda, MD 20814</h4></div>
+        </a>
+      </div>
+      <div class="prop-cta"><a href="listings.html#for-sale" class="btn-dark">View All Sale Properties</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-text">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">A Family Legacy in DC Real Estate</h2>
+        <div class="section-divider"></div>
+        <p>Founded in 1980, Jackson Prentice Real Estate Services, LLC (JPRES) is a family-owned company specializing in commercial and residential real estate in the greater Washington, DC metropolitan area.</p>
+        <p>JPRES was founded by Jackson B. Prentice and his wife, Mary Ruth Prentice. Mr. Prentice was born in Washington, DC in 1949 and has either lived or worked in DC all of his life, carrying deep knowledge of the city's evolving commercial landscape.</p>
+        <p>Hannah Prentice Traul, their daughter, joined JPRES in 2004 and holds a Master's in Real Estate from Johns Hopkins University. Together, they offer a rare combination of long-standing relationships, market depth, and personalized service.</p>
+        <a href="about.html" class="btn-green" style="margin-top:0.5rem;display:inline-block;">Learn More About Us</a>
+      </div>
+      <div class="about-img-wrapper">
+        <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/03/slide2-1600x625.jpg" alt="Washington DC Commercial Real Estate">
+        <div class="about-img-accent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS PREVIEW -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testi-header">
+      <span class="section-label">Client Voices</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="testi-slider">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-slide"><div class="testi-card">
+          <p class="testi-quote">Great fiduciaries, great market knowledge — they know how to line a good deal up and get it closed.</p>
+          <div class="testi-author">Bob Murphy</div><div class="testi-role">Managing Principal, MRP Realty</div>
+        </div></div>
+        <div class="testi-slide"><div class="testi-card">
+          <p class="testi-quote">When I was looking for a management company, the name Jackson Prentice Real Estate Services came up over and over again. They have exceeded my expectations.</p>
+          <div class="testi-author">Peggy Banks</div><div class="testi-role">Property Owner</div>
+        </div></div>
+        <div class="testi-slide"><div class="testi-card">
+          <p class="testi-quote">I have known Jackson my entire career. He was one of the earliest real estate professionals I worked with — his integrity is unmatched.</p>
+          <div class="testi-author">Douglas Jemal</div><div class="testi-role">Founder & President, Douglas Development Corporation</div>
+        </div></div>
+        <div class="testi-slide"><div class="testi-card">
+          <p class="testi-quote">Jackson Prentice has been our go-to firm for all our real estate needs over the last five years. Our requests have been challenging, but they have consistently delivered.</p>
+          <div class="testi-author">Eric Gilliland</div><div class="testi-role">General Manager, Capital Bikeshare</div>
+        </div></div>
+        <div class="testi-slide"><div class="testi-card">
+          <p class="testi-quote">I have worked with Jackson and Hannah for nearly 20 years. They have represented Rock Creek on both leasing and sale assignments in a variety of locations.</p>
+          <div class="testi-author">Gary Schlager</div><div class="testi-role">Principal, Rock Creek Property Group</div>
+        </div></div>
+        <div class="testi-slide"><div class="testi-card">
+          <p class="testi-quote">Negotiations were challenging, but Jackson Prentice negotiated a lease that was both fair and favorable. I found them to be responsive, knowledgeable, and professional.</p>
+          <div class="testi-author">Dr. Joanne Simpson</div><div class="testi-role">Alexandria Associates in Dermatology</div>
+        </div></div>
+      </div>
+    </div>
+    <div class="testi-nav" id="testiNav"></div>
+    <div style="text-align:center;margin-top:2rem;"><a href="testimonials.html" class="btn-dark">Read All Testimonials</a></div>
+  </div>
+</section>
+
+<!-- PORTALS -->
+<div class="portals">
+  <div class="portals-grid">
+    <a href="http://jpres.twa.rentmanager.com/" class="portal-btn" target="_blank">Tenant Portal</a>
+    <a href="http://jpres.owa.rentmanager.com/" class="portal-btn" target="_blank">Owner Portal</a>
+  </div>
+</div>
+
+<!-- BROKER SIGNUP -->
+<section class="broker-signup" id="contact">
+  <div class="container">
+    <div class="broker-inner">
+      <span class="section-label">Stay Connected</span>
+      <h2 class="section-title">Broker Sign Up</h2>
+      <div class="section-divider"></div>
+      <p class="section-intro">Brokers sign up and receive the latest listings delivered to your inbox.</p>
+      <form class="signup-form" onsubmit="handleSignup(event)">
+        <div class="form-row">
+          <input type="text" placeholder="First Name" required>
+          <input type="text" placeholder="Last Name" required>
+        </div>
+        <input type="email" placeholder="Email" required>
+        <button type="submit">Submit</button>
+      </form>
+      <p id="signup-msg" style="font-size:0.82rem;color:var(--green-hover);margin-top:0.75rem;display:none;">✓ Thank you! You'll receive our latest listings shortly.</p>
+      <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--text-muted);">Have a more detailed inquiry? <a href="contact.html" style="color:var(--green-hover);">Visit our contact page →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">JP</div>
+          <div>
+            <div class="footer-logo-title">Jackson Prentice</div>
+            <span class="footer-logo-sub">Real Estate Services, LLC</span>
+          </div>
+        </div>
+        <p>Jackson Prentice Real Estate Services, LLC<br>PO BOX 40058<br>Washington DC, 20016</p>
+        <p style="margin-top:0.75rem;"><a href="tel:2028418700">202.841.8700</a><br><a href="tel:2026007617">202.600.7617</a></p>
+        <p style="margin-top:0.5rem;"><a href="mailto:info@jacksonprentice.com" style="color:var(--green-hover);">info@jacksonprentice.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#land-assemblage">Land Assemblage</a></li>
+          <li><a href="services.html#investment-sales">Investment Sales</a></li>
+          <li><a href="services.html#leasing">Leasing</a></li>
+          <li><a href="property-management.html">Property Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Properties</h4>
+        <ul>
+          <li><a href="listings.html#for-lease">For Lease</a></li>
+          <li><a href="listings.html#for-sale">For Sale</a></li>
+          <li><a href="listings.html#leased">Properties Leased</a></li>
+          <li><a href="listings.html#sold">Properties Sold</a></li>
+          <li><a href="http://jpres.twa.rentmanager.com/" target="_blank">Tenant Portal</a></li>
+          <li><a href="http://jpres.owa.rentmanager.com/" target="_blank">Owner Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jackson Prentice Real Estate Services, LLC. All rights reserved.</span>
+      <span><a href="#">Real Estate Agent Login</a> &nbsp;|&nbsp; Licensed in DC · Maryland · Virginia</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+  // Hero Slideshow
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  function goToSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = n;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+  setInterval(() => goToSlide((currentSlide + 1) % slides.length), 5000);
+</script>
+</body>
+</html>

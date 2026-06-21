@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property Listings | Jackson Prentice Real Estate Services</title>
+<meta name="description" content="Browse Jackson Prentice Real Estate Services property listings — commercial properties for lease and for sale in Washington DC, Virginia, and Maryland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .listings-section { padding: 60px 0; }
+  .listings-section + .listings-section { border-top: 1px solid var(--border); }
+  .listings-header { margin-bottom: 2.5rem; }
+  .prop-card-full {
+    display: grid; grid-template-columns: 280px 1fr; border: 1px solid var(--border);
+    background: var(--bg-card); overflow: hidden; margin-bottom: 1.5rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    text-decoration: none; color: inherit;
+  }
+  .prop-card-full:hover { border-color: var(--green); box-shadow: 0 6px 24px rgba(0,0,0,0.4); }
+  .prop-card-full .prop-img { height: 100%; min-height: 180px; }
+  .prop-card-full .prop-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .prop-card-full-info { padding: 1.8rem 2rem; display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; }
+  .prop-card-full-info h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.05rem;
+    color: var(--white); font-weight: 600; line-height: 1.4;
+  }
+  .prop-card-full-info .prop-detail { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+  .prop-card-full-info .prop-link {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--green-hover); font-weight: 600; margin-top: 0.5rem;
+    text-decoration: none; align-self: flex-start;
+    border-bottom: 1px solid transparent; transition: border-color var(--transition);
+  }
+  .prop-card-full-info .prop-link:hover { border-color: var(--green-hover); }
+  @media(max-width:700px){
+    .prop-card-full { grid-template-columns: 1fr; }
+    .prop-card-full .prop-img { min-height: 200px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <span>Commercial Real Estate · DC Metro Area</span>
+    <a href="mailto:info@jacksonprentice.com">info@jacksonprentice.com</a>
+    <a href="tel:2028418700"><strong>202.841.8700</strong></a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">JP</div>
+      <div class="logo-text">
+        <span class="logo-title">Jackson Prentice</span>
+        <span class="logo-sub">Real Estate Services, LLC</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="services.html">Services</a>
+        <ul class="dropdown">
+          <li><a href="services.html#land-assemblage">Land Assemblage</a></li>
+          <li><a href="services.html#investment-sales">Investment Sales</a></li>
+          <li><a href="services.html#leasing">Leasing</a></li>
+          <li><a href="property-management.html">Property Management</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="listings.html" class="active">Properties</a>
+        <ul class="dropdown">
+          <li><a href="#for-lease">For Lease</a></li>
+          <li><a href="#for-sale">For Sale</a></li>
+          <li><a href="#leased">Properties Leased</a></li>
+          <li><a href="#sold">Properties Sold</a></li>
+        </ul>
+      </li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="services.html#land-assemblage" class="sub">Land Assemblage</a>
+  <a href="services.html#investment-sales" class="sub">Investment Sales</a>
+  <a href="services.html#leasing" class="sub">Leasing</a>
+  <a href="property-management.html" class="sub">Property Management</a>
+  <a href="listings.html">Properties</a>
+  <a href="#for-lease" class="sub">For Lease</a>
+  <a href="#for-sale" class="sub">For Sale</a>
+  <a href="#leased" class="sub">Properties Leased</a>
+  <a href="#sold" class="sub">Properties Sold</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="contact.html">Contact</a>
+  <a href="tel:2028418700" style="margin-top:1.5rem;color:var(--green-hover);">202.841.8700</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span>Properties</span>
+    </div>
+    <span class="page-hero-eyebrow">Listings</span>
+    <div class="page-hero-line"></div>
+    <h1>Featured Properties</h1>
+    <p>Browse our current and recently completed listings across Washington DC, Northern Virginia, and Maryland.</p>
+  </div>
+</div>
+
+<!-- FOR LEASE -->
+<section class="listings-section" id="for-lease" style="background:var(--bg);">
+  <div class="container">
+    <div class="listings-header">
+      <span class="section-label">Active Listings</span>
+      <h2 class="section-title">Properties For Lease</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <a href="https://www.jacksonprentice.com/listing/300-n-washington-st-falls-church-va-22046/" class="prop-card-full" id="p-300-n-washington" target="_blank">
+      <div class="prop-img" style="position:relative;">
+        <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/08/IMG_3633-300x225.jpg" alt="300 N Washington St">
+        <span class="prop-badge" style="position:absolute;top:10px;left:10px;">For Lease</span>
+      </div>
+      <div class="prop-card-full-info">
+        <h3>300 N Washington St — Falls Church, VA 22046</h3>
+        <p class="prop-detail">Commercial space available in the heart of Falls Church. Prime visibility and easy access to the Arlington/Fairfax corridor.</p>
+        <span class="prop-link">View Listing →</span>
+      </div>
+    </a>
+
+    <a href="https://www.jacksonprentice.com/listing/" class="prop-card-full" id="p-3837-pennsylvania" target="_blank">
+      <div class="prop-img" style="position:relative;">
+        <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/08/3837-Pennsylvania-Avenue-300x225.jpg" alt="3837 Pennsylvania Ave SE">
+        <span class="prop-badge" style="position:absolute;top:10px;left:10px;">For Lease</span>
+      </div>
+      <div class="prop-card-full-info">
+        <h3>3837 Pennsylvania Ave SE — Washington, DC 20020</h3>
+        <p class="prop-detail">Retail/commercial space in Southeast DC along the Pennsylvania Avenue corridor. Strong neighborhood retail demand.</p>
+        <span class="prop-link">View Listing →</span>
+      </div>
+    </a>
+
+    <a href="https://www.jacksonprentice.com/listing/" class="prop-card-full" id="p-8121-richmond" target="_blank">
+      <div class="prop-img" style="position:relative;">
+        <img src="https://www.jacksonprentice.com/wp-content/uploads/2017/02/8121-1-300x210.jpg" alt="8121 Richmond Hwy">
+        <span class="prop-badge" style="position:absolute;top:10px;left:10px;">For Lease</span>
+      </div>
+      <div class="prop-card-full-info">
+        <h3>8121 Richmond Hwy — Alexandria, VA 22309</h3>
+        <p class="prop-detail">Commercial space along Richmond Highway in Alexandria. High-traffic corridor with excellent visibility.</p>
+        <span class="prop-link">View Listing →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FOR SALE -->
+<section class="listings-section" id="for-sale" style="background:var(--bg-card);">
+  <div class="container">
+    <div class="listings-header">
+      <span class="section-label">Active Listings</span>
+      <h2 class="section-title">Properties For Sale</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <a href="https://www.jacksonprentice.com/listing/7300-pearl-st-bethesda-md-20814/" class="prop-card-full" id="p-7300-pearl" target="_blank">
+      <div class="prop-img" style="position:relative;">
+        <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/08/1442851601-300x216.jpg" alt="7300 Pearl St Bethesda">
+        <span class="prop-badge sale" style="position:absolute;top:10px;left:10px;">For Sale</span>
+      </div>
+      <div class="prop-card-full-info">
+        <h3>7300 Pearl St — Bethesda, MD 20814</h3>
+        <p class="prop-detail">Investment or owner-user opportunity in Bethesda's established commercial core. Contact JPRES for details and pricing.</p>
+        <span class="prop-link">View Listing →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PROPERTIES LEASED -->
+<section class="listings-section" id="leased" style="background:var(--bg);">
+  <div class="container">
+    <div class="listings-header">
+      <span class="section-label">Completed Transactions</span>
+      <h2 class="section-title">Properties Leased</h2>
+      <div class="section-divider"></div>
+      <p class="section-intro">A selection of recently leased properties representing JPRES's track record across the DC Metro area.</p>
+    </div>
+
+    <div class="prop-grid">
+      <a href="https://www.jacksonprentice.com/listing/5735-a-telegraph-rd-alexandria-va-22303/" class="prop-card" id="p-5735-telegraph" target="_blank">
+        <div class="prop-img">
+          <img src="https://www.jacksonprentice.com/wp-content/uploads/2016/08/Main-photo-300x198.jpg" alt="5735-A Telegraph Rd" loading="lazy">
+          <span class="prop-badge leased">Leased</span>
+        </div>
+        <div class="prop-info">
+          <h4>5735-A Telegraph Rd<br>Alexandria, VA 22303</h4>
+          <p class="prop-meta">Retail · Alexandria, VA</p>
+        </div>
+      </a>
+      <a href="https://www.jacksonprentice.com/listing/8123-richmond-highway/" class="prop-card" target="_blank">
+        <div class="prop-img">
+          <img src="https://www.jacksonprentice.com/wp-content/uploads/2017/02/8123-1-300x183.jpg" alt="8123 Richmond Highway" loading="lazy">
+          <span class="prop-badge leased">Leased</span>
+        </div>
+        <div class="prop-info">
+          <h4>8123 Richmond Highway<br>Alexandria, VA 22309</h4>
+          <p class="prop-meta">Commercial · Alexandria, VA</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTIES SOLD -->
+<section class="listings-section" id="sold" style="background:var(--bg-card);">
+  <div class="container">
+    <div class="listings-header">
+      <span class="section-label">Completed Transactions</span>
+      <h2 class="section-title">Properties Sold</h2>
+      <div class="section-divider"></div>
+      <p class="section-intro">JPRES has represented buyers and sellers in investment and owner-user transactions across Washington DC and the metropolitan area.</p>
+    </div>
+    <div style="background:var(--bg-dark);border:1px solid var(--border);border-left:3px solid var(--green);padding:2rem;">
+      <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.75;">Our sold portfolio spans land assemblages, retail and office investment sales, and owner-user acquisitions across all three metro jurisdictions. Contact us to learn about our complete transaction history or to discuss a potential engagement.</p>
+      <a href="contact.html" class="btn-green" style="margin-top:1.2rem;display:inline-block;">Request Transaction History</a>
+    </div>
+  </div>
+</section>
+
+<!-- INQUIRY CTA -->
+<div class="portals">
+  <div class="portals-grid">
+    <a href="contact.html" class="portal-btn">Inquire About a Property</a>
+    <a href="http://jpres.twa.rentmanager.com/" class="portal-btn" target="_blank">Tenant Portal</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">JP</div>
+          <div>
+            <div class="footer-logo-title">Jackson Prentice</div>
+            <span class="footer-logo-sub">Real Estate Services, LLC</span>
+          </div>
+        </div>
+        <p>Jackson Prentice Real Estate Services, LLC<br>PO BOX 40058<br>Washington DC, 20016</p>
+        <p style="margin-top:0.75rem;"><a href="tel:2028418700">202.841.8700</a><br><a href="tel:2026007617">202.600.7617</a></p>
+        <p style="margin-top:0.5rem;"><a href="mailto:info@jacksonprentice.com" style="color:var(--green-hover);">info@jacksonprentice.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#land-assemblage">Land Assemblage</a></li>
+          <li><a href="services.html#investment-sales">Investment Sales</a></li>
+          <li><a href="services.html#leasing">Leasing</a></li>
+          <li><a href="property-management.html">Property Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Properties</h4>
+        <ul>
+          <li><a href="#for-lease">For Lease</a></li>
+          <li><a href="#for-sale">For Sale</a></li>
+          <li><a href="#leased">Properties Leased</a></li>
+          <li><a href="#sold">Properties Sold</a></li>
+          <li><a href="http://jpres.twa.rentmanager.com/" target="_blank">Tenant Portal</a></li>
+          <li><a href="http://jpres.owa.rentmanager.com/" target="_blank">Owner Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jackson Prentice Real Estate Services, LLC. All rights reserved.</span>
+      <span><a href="#">Real Estate Agent Login</a> &nbsp;|&nbsp; Licensed in DC · Maryland · Virginia</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

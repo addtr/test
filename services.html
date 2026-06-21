@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Jackson Prentice Real Estate Services</title>
+<meta name="description" content="JPRES offers land assemblage, investment sales, leasing, and property management services across Washington DC, Maryland, and Northern Virginia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="inner">
+    <span>Commercial Real Estate · DC Metro Area</span>
+    <a href="mailto:info@jacksonprentice.com">info@jacksonprentice.com</a>
+    <a href="tel:2028418700"><strong>202.841.8700</strong></a>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">JP</div>
+      <div class="logo-text">
+        <span class="logo-title">Jackson Prentice</span>
+        <span class="logo-sub">Real Estate Services, LLC</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-dropdown">
+        <a href="services.html" class="active">Services</a>
+        <ul class="dropdown">
+          <li><a href="#land-assemblage">Land Assemblage</a></li>
+          <li><a href="#investment-sales">Investment Sales</a></li>
+          <li><a href="#leasing">Leasing</a></li>
+          <li><a href="property-management.html">Property Management</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="listings.html">Properties</a>
+        <ul class="dropdown">
+          <li><a href="listings.html#for-lease">For Lease</a></li>
+          <li><a href="listings.html#for-sale">For Sale</a></li>
+          <li><a href="listings.html#leased">Properties Leased</a></li>
+          <li><a href="listings.html#sold">Properties Sold</a></li>
+        </ul>
+      </li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav">
+  <button class="mobile-nav-close" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="#land-assemblage" class="sub">Land Assemblage</a>
+  <a href="#investment-sales" class="sub">Investment Sales</a>
+  <a href="#leasing" class="sub">Leasing</a>
+  <a href="property-management.html" class="sub">Property Management</a>
+  <a href="listings.html">Properties</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="contact.html">Contact</a>
+  <a href="tel:2028418700" style="margin-top:1.5rem;color:var(--green-hover);">202.841.8700</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>/</span><span>Services</span>
+    </div>
+    <span class="page-hero-eyebrow">What We Do</span>
+    <div class="page-hero-line"></div>
+    <h1>Full-Service Commercial Real Estate</h1>
+    <p>From complex land assemblages to day-to-day property management, JPRES provides the full range of commercial real estate services across the DC Metro area.</p>
+  </div>
+</div>
+
+<!-- SERVICES OVERVIEW -->
+<section class="services" style="padding:80px 0;">
+  <div class="container">
+    <div class="services-grid" style="grid-template-columns: repeat(4,1fr);">
+      <div class="service-card">
+        <span class="service-icon">🏗</span>
+        <h3>Land Assemblage</h3>
+        <p>Strategic acquisition of contiguous parcels for development.</p>
+        <a href="#land-assemblage" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📈</span>
+        <h3>Investment Sales</h3>
+        <p>Representation of owners and buyers in investment transactions.</p>
+        <a href="#investment-sales" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔑</span>
+        <h3>Leasing</h3>
+        <p>Landlord and tenant representation for commercial leases.</p>
+        <a href="#leasing" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏢</span>
+        <h3>Property Management</h3>
+        <p>Full-service management of office and mixed-use properties.</p>
+        <a href="property-management.html" class="service-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAND ASSEMBLAGE -->
+<section class="content-block" id="land-assemblage">
+  <div class="container">
+    <div class="two-col">
+      <div class="two-col-text">
+        <span class="section-label">Service 01</span>
+        <h2 class="section-title">Land Assemblage</h2>
+        <div class="section-divider"></div>
+        <p>Land assemblage — the acquisition of multiple contiguous parcels to create a larger development site — requires deep market expertise, discretion, and the patience to negotiate with multiple owners simultaneously. JPRES has participated in countless hard-to-acquire land purchases for strategic assemblages over the past several decades.</p>
+        <p>Our track record includes assemblages in Washington, DC neighborhoods ranging from Capitol Hill to Anacostia, as well as inner-ring suburban markets in Virginia and Maryland. We work with developers, institutional investors, and private landowners to structure complex multi-parcel transactions.</p>
+        <ul>
+          <li>Off-market parcel identification and outreach</li>
+          <li>Multi-owner negotiation and coordination</li>
+          <li>Highest and best use analysis</li>
+          <li>Zoning and entitlement guidance</li>
+          <li>Joint venture and disposition structuring</li>
+        </ul>
+      </div>
+      <div>
+        <div class="highlight-box" style="margin-bottom:1.5rem;">
+          <h4>Why Land Assemblage Requires a Specialist</h4>
+          <p>Assembling contiguous parcels demands confidentiality, patience, and simultaneous negotiation with multiple parties — each with different motivations. JPRES's decades of relationships across DC enable us to navigate these deals where others cannot.</p>
+        </div>
+        <div class="highlight-box">
+          <h4>Representative Markets</h4>
+          <p>Capitol Hill · Anacostia · NoMa · Columbia Heights · Shaw · Alexandria · Arlington · Bethesda</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT SALES -->
+<section class="content-block" id="investment-sales">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="highlight-box" style="margin-bottom:1.5rem;">
+          <h4>What Is Investment Real Estate?</h4>
+          <p>Investment properties — office buildings, retail centers, mixed-use developments, and multifamily assets — are valued based on income and upside potential. Determining the highest and best use requires both analytical rigor and local market intuition.</p>
+        </div>
+        <div class="highlight-box">
+          <h4>Typical Transaction Types</h4>
+          <p>Owner-user acquisitions · Value-add office · Ground-lease structures · 1031 exchange dispositions · Portfolio sales</p>
+        </div>
+      </div>
+      <div class="two-col-text">
+        <span class="section-label">Service 02</span>
+        <h2 class="section-title">Investment Sales</h2>
+        <div class="section-divider"></div>
+        <p>JPRES assists a wide variety of owners and buyers in investment transactions, from single-asset acquisitions to multi-property portfolios. Our principal-level involvement means every engagement receives experienced analysis and hands-on deal management.</p>
+        <p>We help clients identify, evaluate, and execute on opportunities across office, retail, and mixed-use property types — with particular expertise in the mid-market transactions that institutional brokerages often overlook.</p>
+        <ul>
+          <li>Buyer representation and property sourcing</li>
+          <li>Seller representation and marketing</li>
+          <li>Valuation and market analysis</li>
+          <li>Due diligence coordination</li>
+          <li>Off-market deal origination</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEASING -->
+<section class="content-block" id="leasing">
+  <div class="container">
+    <div class="two-col">
+      <div class="two-col-text">
+        <span class="section-label">Service 03</span>
+        <h2 class="section-title">Leasing</h2>
+        <div class="section-divider"></div>
+        <p>JPRES proactively represents both landlord and tenant clients in their commercial leasing needs. Whether you're a property owner seeking to stabilize occupancy or a business searching for the right space, we bring market intelligence and negotiating experience to every lease.</p>
+        <p>Our leasing expertise spans office, retail, and mixed-use properties across Washington, DC and the surrounding metro area. We take a long-term view — structuring leases that work for both parties and support lasting occupancy.</p>
+        <ul>
+          <li>Landlord representation and tenant procurement</li>
+          <li>Tenant representation and space search</li>
+          <li>Market rental rate analysis</li>
+          <li>Lease negotiation and deal structuring</li>
+          <li>Renewal and expansion negotiations</li>
+          <li>Build-out and tenant improvement coordination</li>
+        </ul>
+        <a href="contact.html" class="btn-green" style="margin-top:1.5rem;display:inline-block;">Discuss Your Leasing Needs</a>
+      </div>
+      <div>
+        <div class="highlight-box" style="margin-bottom:1.5rem;">
+          <h4>Landlord Representation</h4>
+          <p>We work proactively to identify and secure quality tenants for our landlord clients — establishing competitive market rents, preparing marketing materials, and managing the full leasing process through execution.</p>
+        </div>
+        <div class="highlight-box">
+          <h4>Tenant Representation</h4>
+          <p>We represent tenants at no cost, helping businesses find the right space, negotiate favorable terms, and avoid common pitfalls in commercial leases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PM TEASER -->
+<section style="background:var(--bg-dark);padding:72px 0;">
+  <div class="container" style="text-align:center;">
+    <span class="section-label">Service 04</span>
+    <h2 class="section-title" style="max-width:480px;margin:0 auto 1rem;">Property Management</h2>
+    <div class="section-divider" style="margin:0 auto 1.4rem;"></div>
+    <p class="section-intro" style="max-width:520px;margin:0 auto 2rem;">JPRES currently manages several office and mixed-use properties in Washington, DC and Virginia totaling over 150,000 square feet. Learn more about our full management capabilities.</p>
+    <a href="property-management.html" class="btn-green">View Property Management Services</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">JP</div>
+          <div>
+            <div class="footer-logo-title">Jackson Prentice</div>
+            <span class="footer-logo-sub">Real Estate Services, LLC</span>
+          </div>
+        </div>
+        <p>Jackson Prentice Real Estate Services, LLC<br>PO BOX 40058<br>Washington DC, 20016</p>
+        <p style="margin-top:0.75rem;"><a href="tel:2028418700">202.841.8700</a><br><a href="tel:2026007617">202.600.7617</a></p>
+        <p style="margin-top:0.5rem;"><a href="mailto:info@jacksonprentice.com" style="color:var(--green-hover);">info@jacksonprentice.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#land-assemblage">Land Assemblage</a></li>
+          <li><a href="#investment-sales">Investment Sales</a></li>
+          <li><a href="#leasing">Leasing</a></li>
+          <li><a href="property-management.html">Property Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Properties</h4>
+        <ul>
+          <li><a href="listings.html#for-lease">For Lease</a></li>
+          <li><a href="listings.html#for-sale">For Sale</a></li>
+          <li><a href="listings.html#leased">Properties Leased</a></li>
+          <li><a href="listings.html#sold">Properties Sold</a></li>
+          <li><a href="http://jpres.twa.rentmanager.com/" target="_blank">Tenant Portal</a></li>
+          <li><a href="http://jpres.owa.rentmanager.com/" target="_blank">Owner Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Jackson Prentice Real Estate Services, LLC. All rights reserved.</span>
+      <span><a href="#">Real Estate Agent Login</a> &nbsp;|&nbsp; Licensed in DC · Maryland · Virginia</span>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
