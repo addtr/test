@@ -84,6 +84,63 @@
         scrollTrigger: { trigger: '.page-hero', start: 'top top', end: 'bottom top', scrub: true },
       });
     }
+
+    // Animated stat count-up
+    document.querySelectorAll('.stat-num').forEach((el) => {
+      const raw = el.textContent.trim();
+      const match = raw.match(/^([\d.]+)(.*)$/);
+      if (!match) return;
+      const end = parseFloat(match[1]);
+      const suffix = match[2];
+      const obj = { val: 0 };
+      const decimals = match[1].includes('.') ? match[1].split('.')[1].length : 0;
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 90%',
+        once: true,
+        onEnter: () => {
+          gsap.to(obj, {
+            val: end,
+            duration: 1.6,
+            ease: 'power2.out',
+            onUpdate: () => { el.textContent = obj.val.toFixed(decimals) + suffix; },
+          });
+        },
+      });
+    });
+
+    // Mouse-tracked 3D tilt + glow on cards
+    if (!prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.service-card, .prop-card, .team-card, .highlight-box, .testi-card, .portal-btn').forEach((card) => {
+        card.classList.add('tilt-target');
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width;
+          const py = (e.clientY - r.top) / r.height;
+          card.style.setProperty('--mx', `${px * 100}%`);
+          card.style.setProperty('--my', `${py * 100}%`);
+          gsap.to(card, {
+            rotateY: (px - 0.5) * 10,
+            rotateX: (0.5 - py) * 10,
+            duration: 0.4,
+            ease: 'power2.out',
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, { rotateY: 0, rotateX: 0, duration: 0.5, ease: 'power3.out' });
+        });
+      });
+    }
+
+    // Nav shadow state on scroll
+    const navBar = document.querySelector('nav');
+    if (navBar) {
+      ScrollTrigger.create({
+        start: 'top -10',
+        end: 99999,
+        onUpdate: (self) => navBar.classList.toggle('scrolled', self.scroll() > 10),
+      });
+    }
   });
 })();
 
