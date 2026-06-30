@@ -204,6 +204,82 @@
         gsap.to(el, { rotateY: 360, duration: 18, repeat: -1, ease: 'none', transformOrigin: '50% 50%' });
       }
     });
+
+    // Inject floating 3D geometric shapes into every header (hero / page-hero / listing-hero)
+    const headerShapeDefs = [
+      { cls: 'ring', size: 140, top: '8%', left: '78%' },
+      { cls: 'ring alt', size: 80, top: '60%', left: '88%' },
+      { cls: 'square', size: 60, top: '20%', left: '60%' },
+      { cls: 'dot', size: 14, top: '35%', left: '70%' },
+      { cls: 'dot', size: 10, top: '75%', left: '64%' },
+      { cls: 'tri', size: 0, top: '50%', left: '92%' },
+    ];
+    document.querySelectorAll('.hero, .page-hero, .listing-hero').forEach((header) => {
+      if (header.querySelector('.header-shapes')) return;
+      const wrap = document.createElement('div');
+      wrap.className = 'header-shapes';
+      headerShapeDefs.forEach((def, i) => {
+        const shape = document.createElement('div');
+        shape.className = `header-shape ${def.cls}`;
+        shape.style.top = def.top;
+        shape.style.left = def.left;
+        if (def.cls !== 'tri') {
+          shape.style.width = def.size + 'px';
+          shape.style.height = def.size + 'px';
+        }
+        shape.dataset.depth = (0.15 + (i % 3) * 0.12).toFixed(2);
+        wrap.appendChild(shape);
+      });
+      header.appendChild(wrap);
+
+      // Mouse-parallax: shapes drift opposite/with cursor based on depth
+      if (!prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
+        header.addEventListener('mousemove', (e) => {
+          const r = header.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          wrap.querySelectorAll('.header-shape').forEach((shape) => {
+            const depth = parseFloat(shape.dataset.depth);
+            gsap.to(shape, {
+              x: px * 60 * depth * 4,
+              y: py * 60 * depth * 4,
+              duration: 0.6,
+              ease: 'power2.out',
+            });
+          });
+        });
+        header.addEventListener('mouseleave', () => {
+          wrap.querySelectorAll('.header-shape').forEach((shape) => {
+            gsap.to(shape, { x: 0, y: 0, duration: 0.8, ease: 'power3.out' });
+          });
+        });
+      }
+    });
+
+    // Split the main header title into chars and reveal them with a 3D stagger
+    document.querySelectorAll('.hero h1, .page-hero h1').forEach((heading) => {
+      if (heading.dataset.split) return;
+      heading.dataset.split = 'true';
+      const words = heading.textContent.split(' ');
+      heading.innerHTML = words
+        .map((w) => `<span style="display:inline-block;white-space:nowrap;">${w
+          .split('')
+          .map((c) => `<span class="split-char">${c}</span>`)
+          .join('')}</span>`)
+        .join(' ');
+      const chars = heading.querySelectorAll('.split-char');
+      gsap.fromTo(
+        chars,
+        prefersReducedMotion ? {} : { opacity: 0, y: 40, rotateX: -70 },
+        {
+          opacity: 1, y: 0, rotateX: 0,
+          duration: 0.7,
+          ease: 'back.out(1.7)',
+          stagger: 0.02,
+          delay: 0.1,
+        }
+      );
+    });
   });
 })();
 

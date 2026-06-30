@@ -522,8 +522,58 @@ html.lenis { height: auto; }
 }
 
 /* NAV SCROLLED STATE */
-nav { transition: box-shadow 0.3s ease, background 0.3s ease; }
-nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.55); }
+nav { transition: box-shadow 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease; }
+nav.scrolled {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.55);
+  background: rgba(17,17,17,0.78);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* 3D FLOATING HEADER SHAPES */
+.hero, .page-hero, .listing-hero { perspective: 1200px; }
+.header-shapes { position: absolute; inset: 0; z-index: 1; pointer-events: none; transform-style: preserve-3d; overflow: hidden; }
+.header-shape {
+  position: absolute; transform-style: preserve-3d; will-change: transform;
+  opacity: 0.85;
+}
+.header-shape.ring {
+  border: 2px solid rgba(74,189,97,0.8); border-radius: 50%;
+  box-shadow: 0 0 24px rgba(54,148,72,0.35), inset 0 0 24px rgba(54,148,72,0.2);
+  animation: spinSlow 16s linear infinite;
+}
+.header-shape.ring.alt { border-color: rgba(255,255,255,0.32); box-shadow: 0 0 18px rgba(255,255,255,0.12); animation-duration: 22s; animation-direction: reverse; }
+.header-shape.square {
+  border: 2px solid rgba(74,189,97,0.65);
+  box-shadow: 0 0 20px rgba(54,148,72,0.3);
+  animation: tumble 14s ease-in-out infinite;
+}
+.header-shape.dot {
+  border-radius: 50%; background: radial-gradient(circle, rgba(94,209,117,0.95), rgba(54,148,72,0) 70%);
+  filter: drop-shadow(0 0 10px rgba(74,189,97,0.6));
+  animation: floatY 7s ease-in-out infinite;
+}
+.header-shape.tri {
+  width: 0; height: 0;
+  border-left: 26px solid transparent; border-right: 26px solid transparent;
+  border-bottom: 44px solid rgba(74,189,97,0.55);
+  filter: drop-shadow(0 0 12px rgba(54,148,72,0.4));
+  animation: tumble 18s ease-in-out infinite reverse;
+}
+@keyframes spinSlow {
+  from { transform: rotate3d(0.5, 1, 0, 0deg); }
+  to { transform: rotate3d(0.5, 1, 0, 360deg); }
+}
+@keyframes tumble {
+  0%, 100% { transform: rotate3d(1, 1, 0, 0deg) translateY(0); }
+  50% { transform: rotate3d(1, 1, 0, 35deg) translateY(-18px); }
+}
+
+/* GLASS GRADIENT MESH BEHIND HEADER TEXT */
+.hero-content, .page-hero-inner { position: relative; z-index: 2; }
+
+/* SPLIT-TEXT 3D REVEAL */
+.split-char { display: inline-block; will-change: transform, opacity; }
 
 /* ANIMATED NAV UNDERLINE */
 .nav-links > li > a { position: relative; }
