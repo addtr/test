@@ -142,12 +142,12 @@
         <h3>Send Us a Message</h3>
         <form class="signup-form" onsubmit="handleContact(event)">
           <div class="form-row">
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
           </div>
-          <input type="email" placeholder="Email Address" required>
-          <input type="tel" placeholder="Phone Number">
-          <select>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number">
+          <select name="interest">
             <option value="" disabled selected>I'm interested in...</option>
             <option>Leasing space</option>
             <option>Investment property acquisition</option>
@@ -157,7 +157,7 @@
             <option>Broker sign-up / listings</option>
             <option>General inquiry</option>
           </select>
-          <textarea placeholder="Tell us more about your needs..." rows="5"></textarea>
+          <textarea name="message" placeholder="Tell us more about your needs..." rows="5"></textarea>
           <button type="submit">Send Message</button>
         </form>
         <p id="contact-msg" style="font-size:0.82rem;color:var(--green-hover);margin-top:0.75rem;display:none;">✓ Thank you! We'll be in touch shortly.</p>
@@ -176,11 +176,11 @@
       <p class="section-intro">Brokers sign up and receive the latest JPRES listings delivered to your inbox.</p>
       <form class="signup-form" onsubmit="handleSignup(event)">
         <div class="form-row">
-          <input type="text" placeholder="First Name" required>
-          <input type="text" placeholder="Last Name" required>
+          <input type="text" name="first_name" placeholder="First Name" required>
+          <input type="text" name="last_name" placeholder="Last Name" required>
         </div>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Company / Brokerage">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="company" placeholder="Company / Brokerage">
         <button type="submit">Subscribe</button>
       </form>
       <p id="signup-msg" style="font-size:0.82rem;color:var(--green-hover);margin-top:0.75rem;display:none;">✓ Thank you! You'll receive our latest listings shortly.</p>

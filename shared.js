@@ -120,18 +120,41 @@ function switchTab(btn, panelId) {
   document.getElementById(panelId).classList.add('active');
 }
 
+// Formspree endpoint — replace YOUR_FORM_ID with the ID from your Formspree
+// dashboard (formspree.io). The form is configured there to deliver to
+// info@jacksonprentice.com; hannahtraul@gmail.com is added as a CC below.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORM_CC = 'hannahtraul@gmail.com';
+
+function submitToFormspree(form, msgEl) {
+  const data = new FormData(form);
+  data.append('_cc', FORM_CC);
+  fetch(FORMSPREE_ENDPOINT, {
+    method: 'POST',
+    body: data,
+    headers: { Accept: 'application/json' },
+  })
+    .then((res) => {
+      if (res.ok) {
+        if (msgEl) msgEl.style.display = 'block';
+        form.reset();
+      } else {
+        alert('Something went wrong sending your message. Please call us at 202.841.8700 or email info@jacksonprentice.com directly.');
+      }
+    })
+    .catch(() => {
+      alert('Something went wrong sending your message. Please call us at 202.841.8700 or email info@jacksonprentice.com directly.');
+    });
+}
+
 // Broker signup
 function handleSignup(e) {
   e.preventDefault();
-  const msg = document.getElementById('signup-msg');
-  if (msg) msg.style.display = 'block';
-  e.target.reset();
+  submitToFormspree(e.target, document.getElementById('signup-msg'));
 }
 
 // Contact form
 function handleContact(e) {
   e.preventDefault();
-  const msg = document.getElementById('contact-msg');
-  if (msg) msg.style.display = 'block';
-  e.target.reset();
+  submitToFormspree(e.target, document.getElementById('contact-msg'));
 }

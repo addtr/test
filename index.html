@@ -297,10 +297,10 @@
       <p class="section-intro">Brokers sign up and receive the latest listings delivered to your inbox.</p>
       <form class="signup-form" onsubmit="handleSignup(event)">
         <div class="form-row">
-          <input type="text" placeholder="First Name" required>
-          <input type="text" placeholder="Last Name" required>
+          <input type="text" name="first_name" placeholder="First Name" required>
+          <input type="text" name="last_name" placeholder="Last Name" required>
         </div>
-        <input type="email" placeholder="Email" required>
+        <input type="email" name="email" placeholder="Email" required>
         <button type="submit">Submit</button>
       </form>
       <p id="signup-msg" style="font-size:0.82rem;color:var(--green-hover);margin-top:0.75rem;display:none;">✓ Thank you! You'll receive our latest listings shortly.</p>
