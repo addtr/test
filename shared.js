@@ -1,3 +1,92 @@
+// Lenis smooth scrolling + GSAP ScrollTrigger reveal animations
+(function () {
+  if (typeof gsap === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (typeof Lenis !== 'undefined' && !prefersReducedMotion) {
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  function reveal(selector, vars, opts = {}) {
+    document.querySelectorAll(selector).forEach((el) => {
+      gsap.fromTo(
+        el,
+        prefersReducedMotion ? {} : vars,
+        {
+          opacity: 1, y: 0, x: 0, rotateX: 0,
+          duration: opts.duration || 0.9,
+          ease: opts.ease || 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+        }
+      );
+    });
+  }
+
+  function revealStagger(containerSelector, itemSelector, vars, opts = {}) {
+    document.querySelectorAll(containerSelector).forEach((container) => {
+      const items = container.querySelectorAll(itemSelector);
+      if (!items.length) return;
+      gsap.fromTo(
+        items,
+        prefersReducedMotion ? {} : vars,
+        {
+          opacity: 1, y: 0, x: 0, rotateX: 0,
+          duration: opts.duration || 0.8,
+          ease: opts.ease || 'power3.out',
+          stagger: opts.stagger || 0.12,
+          scrollTrigger: { trigger: container, start: 'top 85%', toggleActions: 'play none none none' },
+        }
+      );
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    reveal('.section-label, .section-title, .section-divider, .section-intro', { opacity: 0, y: 28 }, { duration: 0.7 });
+    reveal('.two-col-text', { opacity: 0, y: 40 });
+    reveal('.about-text', { opacity: 0, x: -40 });
+    reveal('.about-img-wrapper', { opacity: 0, x: 40 });
+    reveal('.contact-info', { opacity: 0, x: -36 });
+    reveal('.contact-form-wrap', { opacity: 0, x: 36 });
+    reveal('.broker-inner', { opacity: 0, y: 40 });
+    reveal('.testi-slider', { opacity: 0, y: 36 });
+    reveal('.portals-heading', { opacity: 0, y: 28 });
+
+    revealStagger('.services-grid', '.service-card', { opacity: 0, y: 44, rotateX: 10 }, { stagger: 0.1 });
+    revealStagger('.prop-grid', '.prop-card', { opacity: 0, y: 44, rotateX: 8 }, { stagger: 0.1 });
+    revealStagger('.team-grid', '.team-card', { opacity: 0, y: 44 }, { stagger: 0.15 });
+    revealStagger('.stats-grid', '> div', { opacity: 0, y: 30 }, { stagger: 0.1 });
+    revealStagger('.portals-grid', '.portal-btn', { opacity: 0, y: 36 }, { stagger: 0.12 });
+    revealStagger('[style*="grid-template-columns:repeat(3,1fr)"]', '.highlight-box', { opacity: 0, y: 36 }, { stagger: 0.1 });
+    revealStagger('.content-block .two-col', '.highlight-box', { opacity: 0, y: 36 }, { stagger: 0.15 });
+
+    const hero = document.querySelector('.hero');
+    if (hero && !prefersReducedMotion) {
+      gsap.to('.slide.active', {
+        backgroundPosition: '50% 65%',
+        ease: 'none',
+        scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },
+      });
+    }
+    const pageHero = document.querySelector('.page-hero-inner');
+    if (pageHero && !prefersReducedMotion) {
+      gsap.to(pageHero, {
+        y: 60,
+        ease: 'none',
+        scrollTrigger: { trigger: '.page-hero', start: 'top top', end: 'bottom top', scrub: true },
+      });
+    }
+  });
+})();
+
 // Mobile nav: close on link click
 document.querySelectorAll('.mobile-nav a').forEach(a => {
   a.addEventListener('click', () => document.querySelector('.mobile-nav').classList.remove('open'));
