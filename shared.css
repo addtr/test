@@ -525,6 +525,69 @@ html.lenis { height: auto; }
 nav { transition: box-shadow 0.3s ease, background 0.3s ease; }
 nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.55); }
 
+/* ANIMATED NAV UNDERLINE */
+.nav-links > li > a { position: relative; }
+.nav-links > li > a::before {
+  content: ''; position: absolute; left: 1rem; right: 1rem; bottom: 10px; height: 2px;
+  background: var(--green-hover); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-links > li > a:hover::before { transform: scaleX(1); }
+.nav-links > li > a.active::before { display: none; }
+
+/* MAGNETIC BUTTONS */
+.btn-green, .btn-outline, .btn-dark { will-change: transform; }
+
+/* SECTION DIVIDER GROW-IN */
+.section-divider { transform-origin: left; }
+
+/* AMBIENT FLOATING SHAPES ACROSS SECTIONS */
+section, .content-block, .stats-band, .portals, .broker-signup { position: relative; overflow: hidden; }
+.ambient-blob {
+  position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+  filter: blur(2px);
+}
+.ambient-blob.b1 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(45,122,58,0.16), transparent 70%); top: 10%; left: -100px; animation: floatY 13s ease-in-out infinite; }
+.ambient-blob.b2 { width: 220px; height: 220px; background: radial-gradient(circle, rgba(54,148,72,0.14), transparent 70%); bottom: 5%; right: -60px; animation: floatY 10s ease-in-out infinite reverse; }
+.ambient-blob.b3 { width: 160px; height: 160px; background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%); top: 40%; right: 20%; animation: floatY 15s ease-in-out infinite; }
+section > .container, .content-block > .container { position: relative; z-index: 1; }
+
+/* ROTATING / BREATHING ICONS */
+.service-icon, .contact-info-icon, .portal-icon { transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1); display: inline-block; }
+.service-card:hover .service-icon { transform: rotate(-8deg) scale(1.15); }
+.contact-info-item:hover .contact-info-icon { transform: scale(1.2) rotate(6deg); }
+.portal-btn:hover .portal-icon { transform: scale(1.18) rotate(-6deg); }
+
+/* PARALLAX PROPERTY IMAGES */
+.prop-img { perspective: 800px; }
+.prop-img img { will-change: transform; }
+
+/* ANIMATED GRADIENT BACKDROP ON STATS BAND */
+.stats-band {
+  background: linear-gradient(120deg, var(--green), #246332, var(--green-hover), var(--green));
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* SMOOTH IMAGE REVEAL WIPE */
+.reveal-wipe { position: relative; overflow: hidden; }
+.reveal-wipe::before {
+  content: ''; position: absolute; inset: 0; background: var(--green); z-index: 2;
+  transform: scaleX(1); transform-origin: right;
+}
+
+/* DOT / SLIDE-NAV PULSE */
+.dot.active { animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45,122,58,0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(45,122,58,0); }
+}
+
 /* MOBILE */
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -548,4 +611,11 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.55); }
   .testi-card { padding: 1.8rem; }
   .portals-grid { grid-template-columns: 1fr; }
   .portal-btn { border-bottom: 2px solid var(--green); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .page-hero::after, .ambient-blob, .stats-band, .dot.active {
+    animation: none !important;
+  }
+  .reveal-up, .reveal-fade, .reveal-card, .reveal-left, .reveal-right { opacity: 1; transform: none; }
 }

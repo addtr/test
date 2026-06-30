@@ -141,6 +141,69 @@
         onUpdate: (self) => navBar.classList.toggle('scrolled', self.scroll() > 10),
       });
     }
+
+    // Sprinkle ambient floating blobs into every major section for constant subtle motion
+    document.querySelectorAll('section, .content-block, .stats-band, .portals, .broker-signup').forEach((sec, i) => {
+      if (sec.querySelector('.ambient-blob')) return;
+      ['b1', 'b2', 'b3'].forEach((cls, j) => {
+        if ((i + j) % 2 === 0 && j < 2) {
+          const blob = document.createElement('div');
+          blob.className = `ambient-blob ${cls}`;
+          sec.appendChild(blob);
+        }
+      });
+    });
+
+    // Section dividers grow in from 0 width when scrolled into view
+    document.querySelectorAll('.section-divider, .hero-line, .page-hero-line').forEach((el) => {
+      gsap.fromTo(
+        el,
+        prefersReducedMotion ? {} : { scaleX: 0 },
+        {
+          scaleX: 1,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none none' },
+        }
+      );
+    });
+
+    // Magnetic pull on primary buttons
+    if (!prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.btn-green, .btn-outline, .btn-dark').forEach((btn) => {
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          const x = e.clientX - r.left - r.width / 2;
+          const y = e.clientY - r.top - r.height / 2;
+          gsap.to(btn, { x: x * 0.25, y: y * 0.35, duration: 0.3, ease: 'power2.out' });
+        });
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.4)' });
+        });
+      });
+    }
+
+    // Subtle parallax drift on property card images while scrolling past
+    if (!prefersReducedMotion) {
+      document.querySelectorAll('.prop-img img').forEach((img) => {
+        gsap.fromTo(
+          img,
+          { yPercent: -6 },
+          {
+            yPercent: 6,
+            ease: 'none',
+            scrollTrigger: { trigger: img.closest('.prop-card') || img, start: 'top bottom', end: 'bottom top', scrub: true },
+          }
+        );
+      });
+    }
+
+    // Slow continuous rotation on the footer logo mark for ambient motion
+    document.querySelectorAll('.footer-logo-icon').forEach((el) => {
+      if (!prefersReducedMotion) {
+        gsap.to(el, { rotateY: 360, duration: 18, repeat: -1, ease: 'none', transformOrigin: '50% 50%' });
+      }
+    });
   });
 })();
 
