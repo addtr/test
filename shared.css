@@ -57,7 +57,7 @@ nav {
   flex-shrink: 0;
 }
 .logo-img {
-  height: 44px; width: auto;
+  height: 32px; width: auto;
   flex-shrink: 0;
 }
 .logo-text { display: flex; flex-direction: column; }
