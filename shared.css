@@ -56,6 +56,10 @@ nav {
   width: 48px; height: auto;
   flex-shrink: 0;
 }
+.logo-img {
+  height: 44px; width: auto;
+  flex-shrink: 0;
+}
 .logo-text { display: flex; flex-direction: column; }
 .logo-title {
   font-family: 'Playfair Display', serif;
